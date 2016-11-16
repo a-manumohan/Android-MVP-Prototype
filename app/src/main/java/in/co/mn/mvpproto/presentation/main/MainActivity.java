@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity implements MainMvp.View {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter = new MainActivityPresenter(this);
         DaggerMainComponent.builder()
                 .appComponent(((MvpProtoApplication) getApplication()).getAppComponent())
                 .mainModule(new MainModule(this))
-                .build();
+                .build()
+                .inject(this);
         presenter.action();
     }
 
