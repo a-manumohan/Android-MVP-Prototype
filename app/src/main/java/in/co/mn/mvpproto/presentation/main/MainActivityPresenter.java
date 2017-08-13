@@ -2,11 +2,11 @@ package in.co.mn.mvpproto.presentation.main;
 
 import javax.inject.Inject;
 
-public class MainActivityPresenter implements MainMvp.Presenter {
-    MainMvp.View view;
+class MainActivityPresenter implements MainMvp.Presenter {
+    private MainMvp.View view;
 
     @Inject
-    public MainActivityPresenter(MainMvp.View view) {
+    MainActivityPresenter(MainMvp.View view) {
         this.view = view;
     }
 
